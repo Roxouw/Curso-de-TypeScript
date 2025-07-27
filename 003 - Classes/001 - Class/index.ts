@@ -1,11 +1,16 @@
-const fn = (nome: string, idade?: number) => {
-    if (!idade) {  // Verifica se idade foi fornecida
-        return `Nome: ${nome}, Idade: Sem valor definido`;
+class Pessoa{
+    nome: string;
+    idade: number;
+
+    constructor(nome: string, idade: number) {
+        this.nome = nome;
+        this.idade = idade;
     }
 
-    return `Nome: ${nome}, Idade: ${idade}`;
-
+    apresentar(): string {
+        return `Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`;
+    }
 }
 
-console.log(fn("João", 30)); // Nome: João, Idade: 30
-console.log(fn("João")); // Nome: João
+const pessoa1 = new Pessoa("João", 30);
+console.log(pessoa1.apresentar());
